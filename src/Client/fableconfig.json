@@ -9,7 +9,7 @@
                 "DEV_SERVER"
             ],
             "scripts": {
-                "postbuild-once": "node ../../node_modules/webpack-dev-server/bin/webpack-dev-server.js --watch --progress --inline --hot"
+                "postbuild-once": "node ../../node_modules/webpack-dev-server/bin/webpack-dev-server.js --watch --progress --inline --hot --host 0.0.0.0"
             }
         },
         "production": {

@@ -28,7 +28,7 @@ let serverPath = "./src/Server/" |> FullName
 
 let dotnetcliVersion = "1.0.0-rc4-004771"
 
-let dotnetSDKPath = System.Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) </> "dotnetcore" |> FullName
+let dotnetSDKPath = "/usr/bin"
 
 let dotnetExePath =
     dotnetSDKPath </> (if isWindows then "dotnet.exe" else "dotnet")
@@ -197,7 +197,7 @@ Target "BuildClient" (fun _ ->
 // Run the Website
 
 
-let ipAddress = "localhost"
+let ipAddress = "0.0.0.0"
 let port = 8080
 
 
@@ -233,7 +233,7 @@ Target "BuildAll" DoNothing
 
 
 "Clean"
-  ==> "InstallDotNetCore"
+//  ==> "InstallDotNetCore"
   ==> "InstallClient"
   ==> "AssemblyInfo"
   ==> "Build"

@@ -36,7 +36,7 @@ var cfg = {
 };
 
 cfg.entry = [
-  "webpack-dev-server/client?http://localhost:8080",
+  "webpack-dev-server/client?http://0.0.0.0:8080",
   'webpack/hot/only-dev-server',
   "./out/Client/App.js",
 ];
