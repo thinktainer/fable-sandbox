@@ -1,5 +1,6 @@
 source https://nuget.org/api/v2
 
+nuget Confluent.Kafka 0.9.2-preview preview
 nuget FSharp.Core prerelease redirects: force
 nuget Suave
 nuget Microsoft.Extensions.Logging.Console
