@@ -4,10 +4,10 @@ nuget FSharp.Core prerelease redirects: force
 nuget Suave
 nuget Microsoft.Extensions.Logging.Console
 nuget System.Net.NetworkInformation
+nuget Newtonsoft.Json
+nuget jose-jwt
 
 group Build
   source https://nuget.org/api/v2
   
   nuget FAKE
-
-  github fsharp/FAKE modules/Octokit/Octokit.fsx

@@ -1,5 +1,49 @@
-namespace Domain
+namespace ServerCode.Domain
 
 open System
 
-type ID = string
+type JWT = string
+
+type Login = { 
+    UserName : string
+    Password : string }
+
+type Book = {
+    Title: string
+    Authors: string
+    Link: string }
+    with
+        static member empty = { 
+            Title = ""
+            Authors = ""
+            Link = "" }
+
+type WishList = {
+    UserName : string
+    Books : Book list }
+    with 
+        static member New userName = 
+            { UserName = userName
+              Books = [] }
+
+module Validation =
+
+    let verifyBookTitle title =
+        if String.IsNullOrWhiteSpace title then Some "No title was entered" else
+        None
+
+    let verifyBookAuthors authors =
+        if String.IsNullOrWhiteSpace authors then Some "No author was entered" else
+        None
+
+    let verifyBookLink link =
+        if String.IsNullOrWhiteSpace link then Some "No link was entered" else
+        None
+
+    let verifyBook book =
+        verifyBookTitle book.Title = None &&
+        verifyBookAuthors book.Authors = None &&
+        verifyBookLink book.Link = None
+
+    let verifyWishList wishList =
+        wishList.Books |> List.forall verifyBook
