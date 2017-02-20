@@ -152,7 +152,7 @@ open Fable.Core.JsInterop
 let view model dispatch =
   div []
     [ div [ centerStyle "row" ]
-        [ viewLink Home "Home"
+        [ viewLink Home "To Home"
           viewLink (Blog 42) "Cat Facts"
           viewLink (Blog 13) "Alligator Jokes"
           viewLink (Blog 26) "Workout Plan"
